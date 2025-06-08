@@ -130,12 +130,3 @@ resource "aws_instance" "corp-webserver" {
     Env = local.env
   }
 } 
-
-resource "aws_s3_bucket" "corp-s3" {
-  bucket = "corp-dm-bk"
-
-  tags = {
-    Name        = "${var.name}-s3"
-    Environment = "aws"
-  }
-}
