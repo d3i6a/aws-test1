@@ -36,3 +36,13 @@ variable "instance-type" {
     type = string
     default = "t2.micro"
 }
+
+variable "corp-bk-names" {
+   description = "name of  buckets"
+   type = map(string)
+   default = {
+     "bk1" = "cbk"
+     "bk2" = "dbk"
+     "bk3" = "lbk"
+   }
+}

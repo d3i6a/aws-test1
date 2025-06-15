@@ -130,3 +130,16 @@ resource "aws_instance" "corp-webserver" {
     Env = local.env
   }
 } 
+
+# AWS LOOP
+#######################
+
+resource "aws_s3_bucket" "corp-bucket" {
+  for_each = var.corp-bk-names
+  bucket = "${var.corp-bk-names[each.key]}-bk"
+
+  tags = {  
+    name = "${var.corp-bk-names[each.key]}-bk"
+
+  }
+}
